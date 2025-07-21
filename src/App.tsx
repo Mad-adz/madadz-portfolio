@@ -17,6 +17,7 @@ import {
   Mail,
   Phone,
   Globe,
+  Check,
 } from "lucide-react";
 
 function App() {
@@ -85,7 +86,7 @@ function App() {
         "Sri Sai Brindhavan Foundation is a spiritual and charitable trust dedicated to community service, devotion, and social welfare initiatives.",
       image: "/projects/ssbf.avif",
       tags: ["Reactjs", "Tailwind", "Framer", "React Router"],
-      category: "Spiritual",
+      category: "Temple",
       link: "https://www.saibrindhavanam.com/",
     },
     {
@@ -95,7 +96,7 @@ function App() {
         "Jai Kosha Foundation is a non-profit organization focused on education, empowerment, and sustainable community development.",
       image: "/projects/jaikosha.avif",
       tags: ["Reactjs", "Tailwind", "Framer", "React Router"],
-      category: "Spiritual",
+      category: "NGO",
       link: "https://www.jaikosha.com/",
     },
     {
@@ -137,6 +138,98 @@ function App() {
       tags: ["Reactjs", "Tailwind", "Framer", "React Router"],
       category: "Education",
       link: "https://education-website-zeta-ruddy.vercel.app/",
+    },
+  ];
+
+  const pricingPlans = [
+    {
+      title: "BASIC",
+      price: "₹4499",
+      priceNote: "/ project",
+      billing: "billed per project",
+      description: "For relatively basic, single page static sites.",
+      features: [
+        "Responsive Design.",
+        "Single page website.",
+        "Contact form.",
+        "Free Hosting & SSL Certificate.",
+        "2 free business emails",
+        "Free Logo, Letterhead & Business Card Designs.",
+        "Free Content updates within the first month.",
+      ],
+      buttonText: "Get Started",
+      popular: false,
+      highlight: false,
+    },
+    {
+      title: "STANDARD",
+      price: "₹6,999",
+      priceNote: "/ project",
+      billing: "billed per project",
+      description: "For simple and moderate content-driven websites.",
+      features: [
+        "Responsive Design.",
+        "Up to 5 pages.",
+        "Contact form.",
+        "Free Hosting & SSL Certificate.",
+        "5 free business emails",
+        "Social media account creation.",
+        "Basic On-page SEO optimization.",
+        "Free Logo, Letterhead & Business Card Designs.",
+        "Free Content updates within the first 2 months.",
+      ],
+      buttonText: "Get Started",
+      popular: false,
+      highlight: false,
+    },
+    {
+      title: "PREMIUM",
+      price: "₹16,999",
+      priceNote: "/ project",
+      billing: "billed per project",
+      description: "For larger sites that need more flexibility.",
+      features: [
+        "Responsive Design.",
+        "Up to 15 pages.",
+        "Contact form.",
+        "Custom animations.",
+        "Priority support",
+        "Free Hosting & SSL Certificate.",
+        "10 free business emails",
+        "Free Logo, Letterhead & Business Card Designs.",
+        "Free Company Profile and Brochure Designs.",
+        "Social media account creation.",
+        "Blogs page with 5 free blogs for first month.",
+        "Social media management for first month.",
+        "Advanced On-page SEO optimization.",
+        "Free Content updates within the first 3 months.",
+      ],
+      buttonText: "Get Started",
+      popular: true,
+      highlight: true,
+    },
+    {
+      title: "E-COMMERCE",
+      price: "Get a demo",
+      priceNote: "",
+      billing: "custom pricing",
+      description: "For those who need a scalable custom solution.",
+      features: [
+        "Everything in PREMIUM.",
+        "Free Domain.",
+        "Custom UI Design",
+        "Product management",
+        "Shopping cart",
+        "Payment gateway",
+        "Inventory management",
+        "Order management.",
+        "Customer accounts.",
+        "Analytics dashboard.",
+        "6-months support.",
+      ],
+      buttonText: "Talk to us",
+      popular: false,
+      highlight: false,
     },
   ];
 
@@ -335,7 +428,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
             {projects.map((project) => (
               <div
                 key={project.id}
@@ -348,14 +441,18 @@ function App() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-violet-600/90 to-violet-700/90 backdrop-blur-sm rounded-full text-sm font-medium">
+                  <div className="absolute bottom-4 left-4 px-3 py-1 bg-gradient-to-r from-violet-600/90 to-violet-700/90 backdrop-blur-sm rounded-full text-sm font-medium">
                     {project.category}
                   </div>
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
-                    <div className="w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    className="absolute top-4 right-4 z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110"
+                  >
+                    <span className="w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer relative z-0">
                       <ExternalLink size={18} className="text-white" />
-                    </div>
-                  </div>
+                    </span>
+                  </a>
                 </div>
 
                 <div className="p-8">
@@ -386,6 +483,86 @@ function App() {
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-600/5 to-violet-700/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="py-20 relative z-10">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-violet-500 text-transparent leading-20">
+              Pricing Plans
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Choose the perfect plan for your business needs
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {pricingPlans.map((plan, index) => (
+              <div
+                key={index}
+                className={`bg-gradient-to-br from-gray-900/80 to-violet-900/20 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-300 hover:scale-105 ${
+                  plan.highlight
+                    ? "border-violet-500/50 hover:border-violet-400/70 relative"
+                    : "border-gray-700/50 hover:border-violet-500/50"
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gray-800 text-white px-4 py-1 rounded-full text-xs font-semibold">
+                      POPULAR
+                    </div>
+                  </div>
+                )}
+                <div className="mb-6">
+                  <div className="inline-block bg-violet-600 text-white px-4 py-2 rounded-lg text-sm font-semibold mb-4">
+                    {plan.title}
+                  </div>
+                  <div className="flex items-baseline mb-2">
+                    <span className="text-4xl font-bold text-white">
+                      {plan.price}
+                    </span>
+                    {plan.priceNote && (
+                      <span className="text-gray-400 ml-2">
+                        {plan.priceNote}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-gray-400 text-sm">{plan.billing}</p>
+                </div>
+
+                <p className="text-gray-300 mb-6">{plan.description}</p>
+
+                <a
+                  href="https://wa.me/919566863602"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-violet-600 hover:bg-violet-700 text-white text-center py-3 rounded-xl font-semibold transition-colors mb-6"
+                >
+                  {plan.buttonText}
+                </a>
+
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-violet-400 text-xs uppercase tracking-wider mb-3">
+                      FEATURES
+                    </h4>
+                    <ul className="space-y-3 text-sm">
+                      {plan.features.map((feature, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-2 text-gray-100"
+                        >
+                          <Check className="text-violet-400 text-[6px] shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -567,7 +744,7 @@ function App() {
           <div className="text-center">
             <div className="relative mb-6 flex items-center justify-center gap-4">
               <div className="w-20">
-                <img src="/madadz.png" alt="" />
+                <img src="/madadz.png" alt="Madadz" />
               </div>
             </div>
             <p className="text-gray-400 mb-6 text-lg">
