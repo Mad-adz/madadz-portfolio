@@ -20,10 +20,23 @@ import {
   Check,
 } from "lucide-react";
 
+import { useForm, ValidationError } from "@formspree/react";
+import toast, { Toaster } from "react-hot-toast";
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [state, handleSubmit] = useForm("mbloglej");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  console.log(state);
+  console.log(state.errors);
+  console.log(formData);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -39,6 +52,23 @@ function App() {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
+  useEffect(() => {
+    if (state.succeeded) {
+      toast.success("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } else if (state.errors !== null) {
+      toast.error("Please fill out all required fields!");
+    }
+  }, [state.succeeded, state.errors]);
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -145,7 +175,7 @@ function App() {
     {
       title: "BASIC",
       price: "₹4499",
-      priceNote: "/ project",
+      priceNote: "+ GST / project",
       billing: "billed per project",
       description: "For relatively basic, single page static sites.",
       features: [
@@ -164,7 +194,7 @@ function App() {
     {
       title: "STANDARD",
       price: "₹6,999",
-      priceNote: "/ project",
+      priceNote: "+ GST / project",
       billing: "billed per project",
       description: "For simple and moderate content-driven websites.",
       features: [
@@ -184,8 +214,8 @@ function App() {
     },
     {
       title: "PREMIUM",
-      price: "₹16,999",
-      priceNote: "/ project",
+      price: "₹17,999",
+      priceNote: "+ GST / project",
       billing: "billed per project",
       description: "For larger sites that need more flexibility.",
       features: [
@@ -197,7 +227,7 @@ function App() {
         "Free Hosting & SSL Certificate.",
         "10 free business emails",
         "Free Logo, Letterhead & Business Card Designs.",
-        "Free Company Profile and Brochure Designs.",
+        "Free Company Profile Designs.",
         "Social media account creation.",
         "Blogs page with 5 free blogs for first month.",
         "Social media management for first month.",
@@ -212,7 +242,7 @@ function App() {
       title: "E-COMMERCE",
       price: "Get a demo",
       priceNote: "",
-      billing: "custom pricing",
+      billing: "Starting at ₹26,999",
       description: "For those who need a scalable custom solution.",
       features: [
         "Everything in PREMIUM.",
@@ -526,7 +556,7 @@ function App() {
                       {plan.price}
                     </span>
                     {plan.priceNote && (
-                      <span className="text-gray-400 ml-2">
+                      <span className="text-gray-400 ml-1">
                         {plan.priceNote}
                       </span>
                     )}
@@ -691,35 +721,85 @@ function App() {
                 </div>
 
                 <div>
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <input
                         type="text"
+                        name="name"
+                        id="name"
+                        required
+                        value={formData.name}
+                        onChange={(e) =>
+                          handleInputChange("name", e.target.value)
+                        }
                         className="w-full px-6 py-4 bg-gray-800/50 border border-gray-600 rounded-2xl focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 text-white transition-all duration-300"
                         placeholder="Your Name"
+                      />
+                      <ValidationError
+                        prefix="Name"
+                        field="name"
+                        errors={state.errors}
                       />
                     </div>
                     <div>
                       <input
                         type="email"
+                        name="email"
+                        id="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) =>
+                          handleInputChange("email", e.target.value)
+                        }
                         className="w-full px-6 py-4 bg-gray-800/50 border border-gray-600 rounded-2xl focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 text-white transition-all duration-300"
                         placeholder="your@email.com"
+                      />
+                      <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
                       />
                     </div>
                     <div>
                       <textarea
+                        name="message"
+                        id="message"
+                        required
                         rows={4}
+                        value={formData.message}
+                        onChange={(e) =>
+                          handleInputChange("message", e.target.value)
+                        }
                         className="w-full px-6 py-4 bg-gray-800/50 border border-gray-600 rounded-2xl focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 text-white resize-none transition-all duration-300"
                         placeholder="Tell us about your project..."
                       ></textarea>
+
+                      <ValidationError
+                        prefix="Message"
+                        field="message"
+                        errors={state.errors}
+                      />
                     </div>
                     <button
                       type="submit"
+                      disabled={state.submitting}
                       className="w-full bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25"
                     >
-                      Send Message
+                      {state.submitting ? "Sending..." : "Send Message"}
                     </button>
                   </form>
+
+                  {/* {state?.succeeded && (
+                    <p className="text-lg font-semibold my-10 bg-gradient-to-r from-emerald-500 to-emerald-400 bg-clip-text text-transparent">
+                      Message sent successfully!
+                    </p>
+                  )} */}
+
+                  {/* {state?.errors && (
+                    <p className="text-lg font-semibold my-10 bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
+                      Please fill out all required fields!
+                    </p>
+                  )} */}
 
                   {/* <div className="mt-6">
                     <button
@@ -754,6 +834,7 @@ function App() {
           </div>
         </div>
       </footer>
+      <Toaster />
     </div>
   );
 }
