@@ -309,7 +309,7 @@ function App() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-10">
-              {["Home", "Projects", "Contact"].map((item) => (
+              {["Home", "Projects", "Pricing", "Contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -346,7 +346,7 @@ function App() {
           {isMenuOpen && (
             <div className="md:hidden mt-6 py-6 bg-gradient-to-r from-violet-900/20 to-violet-800/20 backdrop-blur-xl rounded-2xl border border-violet-500/20">
               <div className="flex flex-col space-y-6 px-6">
-                {["Home", "Projects", "Contact"].map((item) => (
+                {["Home", "Projects", "Pricing", "Contact"].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
@@ -375,13 +375,13 @@ function App() {
         className="relative min-h-screen flex items-center justify-center py-24"
       >
         <div className="container relative z-10 text-center px-6">
-          <h1 className="text-center uppercase font-black text-3xl md:text-4xl lg:text-5xl text-white mt-10 mb-4 leading-24">
+          <h1 className="text-center uppercase font-black text-3xl md:text-4xl lg:text-5xl text-white mt-10 mb-4 leading-loose">
             Empowering Ideas. <br /> Delivering Results.
           </h1>
 
           <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            We craft extraordinary digital experiences that push boundaries and
-            redefine what's possible in the modern web.
+            We’re a Chennai-grown SaaS team crafting next-gen digital
+            experiences that break boundaries and deliver success.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
@@ -442,85 +442,9 @@ function App() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section
-        id="projects"
-        className="py-20 bg-gradient-to-br from-gray-900/30 to-black relative z-10"
-      >
-        <div className="container px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-violet-400 to-violet-300 bg-clip-text text-transparent">
-              Our Projects
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover our portfolio of innovative digital solutions that have
-              transformed businesses and delighted users worldwide.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="group relative bg-gradient-to-br from-gray-900/80 to-violet-900/20 backdrop-blur-sm rounded-3xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 shadow-2xl border border-violet-500/20 hover:border-violet-400/40"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 px-3 py-1 bg-gradient-to-r from-violet-600/90 to-violet-700/90 backdrop-blur-sm rounded-full text-sm font-medium">
-                    {project.category}
-                  </div>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    className="absolute top-4 right-4 z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110"
-                  >
-                    <span className="w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer relative z-0">
-                      <ExternalLink size={18} className="text-white" />
-                    </span>
-                  </a>
-                </div>
-
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-violet-300 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-gradient-to-r from-violet-600/20 to-violet-700/20 border border-violet-500/30 rounded-full text-sm text-violet-300 hover:bg-violet-600/30 transition-colors"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    className="inline-flex items-center space-x-2 text-violet-400 hover:text-violet-300 transition-colors group-hover:translate-x-2 transform duration-300 font-medium relative z-50"
-                  >
-                    <span>View Project</span>
-                    <ExternalLink size={16} />
-                  </a>
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-600/5 to-violet-700/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* Pricing Section */}
       <section id="pricing" className="py-20 relative z-10">
-        <div className="container mx-auto px-6">
+        <div className="container px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 text-violet-500 text-transparent leading-20">
               Pricing Plans
@@ -593,6 +517,83 @@ function App() {
                     </ul>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className="py-20 bg-gradient-to-br from-gray-900/30 to-black relative z-10"
+      >
+        <div className="container px-6 lg:px-10 xl:px-16">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-violet-400 to-violet-300 bg-clip-text text-transparent">
+              Our Projects
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover our portfolio of innovative digital solutions that have
+              transformed businesses and delighted users worldwide.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="group relative bg-gradient-to-br from-gray-900/80 to-violet-900/20 backdrop-blur-sm rounded-3xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 shadow-2xl border border-violet-500/20 hover:border-violet-400/40"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 px-3 py-1 bg-gradient-to-r from-violet-600/90 to-violet-700/90 backdrop-blur-sm rounded-full text-sm font-medium">
+                    {project.category}
+                  </div>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    className="absolute top-4 right-4 z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110"
+                  >
+                    <span className="w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer relative z-0">
+                      <ExternalLink size={18} className="text-white" />
+                    </span>
+                  </a>
+                </div>
+
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-violet-300 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-gradient-to-r from-violet-600/20 to-violet-700/20 border border-violet-500/30 rounded-full text-sm text-violet-300 hover:bg-violet-600/30 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    className="inline-flex items-center space-x-2 text-violet-400 hover:text-violet-300 transition-colors group-hover:translate-x-2 transform duration-300 font-medium relative z-50"
+                  >
+                    <span>View Project</span>
+                    <ExternalLink size={16} />
+                  </a>
+                </div>
+
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-600/5 to-violet-700/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
               </div>
             ))}
           </div>
@@ -819,7 +820,133 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-gray-900/30 to-violet-900/30 py-12 border-t border-violet-500/20 relative z-10">
+      <footer className="relative min-h-screen bg-gradient-to-r from-gray-900/10 to-violet-900/30 overflow-hidden py-16">
+        {/* Main Content */}
+        <div className="container px-6 md:px-16">
+          {/* Top Section */}
+          <div className="grid xl:grid-cols-2 gap-12 xl:gap-20 mb-10 max-w-7xl mx-auto">
+            {/* Left Column - Brand Message */}
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-relaxed">
+                Embrace the future of innovation with
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-600">
+                  our creative expertise.
+                </span>
+              </h2>
+
+              {/* Contact Info */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-300">
+                  <Mail className="w-5 h-5" />
+                  <a href="mailto:support@madadz.co" className="text-lg">
+                    support@madadz.co
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-300">
+                  <Phone className="w-5 h-5" />
+                  <a href="tel:+919566863602" className="text-lg">
+                    +91 95668 63602
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Navigation */}
+            <div className="grid sm:grid-cols-2 gap-8 lg:gap-12">
+              <div>
+                <h3 className="text-xl font-semibold text-violet-500 mb-6">
+                  Services
+                </h3>
+                <ul className="space-y-4">
+                  {[
+                    {
+                      label: "Web Development",
+                      link: "https://www.madadz.co/web-development",
+                    },
+                    {
+                      label: "App Development",
+                      link: "https://www.madadz.co/app-development",
+                    },
+                    {
+                      label: "UX/UI Design",
+                      link: "https://www.madadz.co/uxui-design",
+                    },
+                    {
+                      label: "Digital Marketing",
+                      link: "https://www.madadz.co/digital-marketing",
+                    },
+                    {
+                      label: "Content Creation",
+                      link: "https://www.madadz.co/content-creation",
+                    },
+                  ].map((item, index) => (
+                    <li key={index}>
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-300 hover:text-violet-400 transition-colors duration-300 text-lg"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-violet-500 mb-6 md:text-right">
+                  Reach Us
+                </h3>
+                <div>
+                  <address className="md:text-right">
+                    <p className="text-gray-300 hover:text-white transition-colors duration-300 text-lg leading-loose">
+                      <span className="font-semibold text-2xl">MADADZ,</span>{" "}
+                      <br />
+                      No.10 , Thiruvalluvar Street, <br />
+                      Shanthi Nagar, Irumbuliyur, <br />
+                      East Tambaram, <br />
+                      Chennai - 600059.
+                    </p>
+                  </address>
+                </div>
+                {/* <ul className="space-y-4">
+                  {["About us", "Contact", "Careers", "Blog", "Portfolio"].map(
+                    (item) => (
+                      <li key={item}>
+                        <a
+                          href="#"
+                          className="text-gray-300 hover:text-violet-400 transition-colors duration-300 text-lg"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    )
+                  )}
+                </ul> */}
+              </div>
+            </div>
+          </div>
+
+          {/* Large Brand Text Background */}
+          <div className="relative mb-6 overflow-hidden">
+            <div className="text-center">
+              <h1 className="text-6xl sm:text-8xl md:text-[9rem] lg:text-[12rem] xl:text-[19rem] font-black text-violet-100/5 select-none leading-none tracking-tight">
+                MADADZ
+              </h1>
+            </div>
+          </div>
+
+          {/* Copyright Section */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 pt-8 border-t border-violet-500/30">
+            <div className="text-violet-300/70 text-sm">
+              © 2025 MADADZ. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
+      {/* <footer className="bg-gradient-to-r from-gray-900/30 to-violet-900/30 py-12 border-t border-violet-500/20 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center">
             <div className="relative mb-6 flex items-center justify-center gap-4">
@@ -833,7 +960,8 @@ function App() {
             <p className="text-gray-500">© 2025 MADADZ. All rights reserved.</p>
           </div>
         </div>
-      </footer>
+      </footer> */}
+
       <Toaster />
     </div>
   );
