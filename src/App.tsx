@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import {
-  MessageCircle,
+  // MessageCircle,
   ExternalLink,
   Linkedin,
   Twitter,
@@ -284,9 +284,15 @@ function App() {
         href="https://wa.me/919566863602"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 z-50 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 group"
+        className="fixed bottom-5 right-5 z-50 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-2 md:p-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 group"
       >
-        <MessageCircle size={28} className="group-hover:animate-bounce" />
+        {/* <MessageCircle size={28} className="group-hover:animate-bounce" /> */}
+        <img
+          // src="https://img.icons8.com/ios-filled/30/ffffff/whatsapp.png"
+          src="https://img.icons8.com/?size=40&id=16713&format=png&color=000000"
+          alt="WhatsApp"
+          className="group-hover:animate-bounce"
+        />
       </a>
 
       {/* Navigation */}
@@ -319,7 +325,16 @@ function App() {
                   <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-violet-400 group-hover:w-full transition-all duration-300"></div>
                 </button>
               ))}
-              <button
+              <a
+                href="https://wa.me/919566863602"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-8 py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25 group overflow-hidden"
+              >
+                <span className="relative z-10">Book Consultation</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              {/* <button
                 onClick={() =>
                   window.open(
                     "https://calendly.com/madadzindia/30min",
@@ -330,7 +345,7 @@ function App() {
               >
                 <span className="relative z-10">Book Consultation</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
+              </button> */}
             </div>
 
             {/* Mobile Menu Button */}
@@ -392,13 +407,21 @@ function App() {
               <span className="relative z-10">View Our Work</span>
               <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection("contact")}
               className="group relative border-2 border-violet-500 hover:border-violet-400 hover:bg-violet-500/10 px-12 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm"
             >
               Get In Touch
               <div className="absolute inset-0 bg-gradient-to-r from-violet-500/5 to-violet-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-            </button>
+            </button> */}
+            <a
+              href="tel:+919566863602"
+              className="group flex items-center gap-2 relative border-2 border-violet-500 hover:border-violet-400 hover:bg-violet-500/10 px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer"
+            >
+              <Phone className="w-5 h-5" />
+              <span>+91 9566863602</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/5 to-violet-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+            </a>
           </div>
 
           {/* Services Preview */}
