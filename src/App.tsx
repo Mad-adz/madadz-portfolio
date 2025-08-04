@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import {
-  // MessageCircle,
   ExternalLink,
   Linkedin,
   Twitter,
@@ -286,9 +285,7 @@ function App() {
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-50 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-2 md:p-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 group"
       >
-        {/* <MessageCircle size={28} className="group-hover:animate-bounce" /> */}
         <img
-          // src="https://img.icons8.com/ios-filled/30/ffffff/whatsapp.png"
           src="https://img.icons8.com/?size=40&id=16713&format=png&color=000000"
           alt="WhatsApp"
           className="group-hover:animate-bounce"
@@ -330,22 +327,16 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-8 py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25 group overflow-hidden"
+                // onClick={() =>
+                //   window.open(
+                //     "https://calendly.com/madadzindia/30min",
+                //     "_blank"
+                //   )
+                // }
               >
                 <span className="relative z-10">Book Consultation</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
-              {/* <button
-                onClick={() =>
-                  window.open(
-                    "https://calendly.com/madadzindia/30min",
-                    "_blank"
-                  )
-                }
-                className="relative bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-8 py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25 group overflow-hidden"
-              >
-                <span className="relative z-10">Book Consultation</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button> */}
             </div>
 
             {/* Mobile Menu Button */}
@@ -370,14 +361,17 @@ function App() {
                     {item}
                   </button>
                 ))}
-                <button
-                  onClick={() =>
-                    window.open("https://calendly.com/madadz", "_blank")
-                  }
+                <a
+                  href="https://wa.me/919566863602"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-6 py-3 rounded-2xl transition-all duration-300 text-center font-semibold"
+                  // onClick={() =>
+                  //   window.open("https://calendly.com/madadz", "_blank")
+                  // }
                 >
                   Book Consultation
-                </button>
+                </a>
               </div>
             </div>
           )}
@@ -387,7 +381,7 @@ function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center py-24"
+        className="relative min-h-[360px] flex items-center justify-center py-24"
       >
         <div className="container relative z-10 text-center px-6">
           <h1 className="text-center uppercase font-black text-3xl md:text-4xl lg:text-5xl text-white mt-10 mb-4 leading-loose">
@@ -399,7 +393,7 @@ function App() {
             experiences that break boundaries and deliver success.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
             <button
               onClick={() => scrollToSection("projects")}
               className="group relative bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-12 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/30 overflow-hidden"
@@ -425,7 +419,7 @@ function App() {
           </div>
 
           {/* Services Preview */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {[
               {
                 icon: Code,
@@ -457,7 +451,7 @@ function App() {
                 <p className="text-gray-400 text-sm">{service.desc}</p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div className="absolute bottom-8 left-[49%] transform -translate-x-1/2 animate-bounce">
@@ -466,7 +460,7 @@ function App() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 relative z-10">
+      <section id="pricing" className="pb-10 relative z-10">
         <div className="container px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 text-violet-500 text-transparent leading-20">
@@ -540,6 +534,53 @@ function App() {
                     </ul>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative bg-gradient-to-r from-gray-900/10 to-violet-900/30 overflow-hidden py-16">
+        <div className="container px-6 lg:px-10 xl:px-16">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-violet-400 to-violet-300 bg-clip-text text-transparent">
+              Our Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience a full range of services built to accelerate your digital journey — with precision, creativity, and performance at the core.
+            </p>
+          </div>
+          {/* Services Preview */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                icon: Code,
+                title: "Development",
+                desc: "Full-stack solutions",
+              },
+              {
+                icon: LayoutDashboard,
+                title: "Design",
+                desc: "Beautiful interfaces",
+              },
+              {
+                icon: Rocket,
+                title: "Strategy",
+                desc: "Digital transformation",
+              },
+              { icon: Palette, title: "Creatives", desc: "Content Creation" },
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="group bg-gradient-to-br from-gray-900/50 to-violet-900/20 backdrop-blur-sm rounded-2xl p-6 border border-violet-500/20 hover:border-violet-400/40 transition-all duration-300 hover:scale-105 text-center"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-violet-600 to-violet-700 rounded-xl flex items-center justify-center mb-4 group-hover:rotate-6 transition-transform duration-300 mx-auto">
+                  <service.icon size={24} className="text-white" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-white">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 text-sm">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -812,29 +853,6 @@ function App() {
                       {state.submitting ? "Sending..." : "Send Message"}
                     </button>
                   </form>
-
-                  {/* {state?.succeeded && (
-                    <p className="text-lg font-semibold my-10 bg-gradient-to-r from-emerald-500 to-emerald-400 bg-clip-text text-transparent">
-                      Message sent successfully!
-                    </p>
-                  )} */}
-
-                  {/* {state?.errors && (
-                    <p className="text-lg font-semibold my-10 bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
-                      Please fill out all required fields!
-                    </p>
-                  )} */}
-
-                  {/* <div className="mt-6">
-                    <button
-                      onClick={() =>
-                        window.open("https://calendly.com/madadzindia/30min", "_blank")
-                      }
-                      className="w-full flex items-center justify-center space-x-3 border-2 border-violet-500 hover:border-violet-400 hover:bg-violet-500/10 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 group"
-                    >
-                      <span>Schedule Meeting</span>
-                    </button>
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -934,20 +952,6 @@ function App() {
                     </p>
                   </address>
                 </div>
-                {/* <ul className="space-y-4">
-                  {["About us", "Contact", "Careers", "Blog", "Portfolio"].map(
-                    (item) => (
-                      <li key={item}>
-                        <a
-                          href="#"
-                          className="text-gray-300 hover:text-violet-400 transition-colors duration-300 text-lg"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    )
-                  )}
-                </ul> */}
               </div>
             </div>
           </div>
@@ -969,21 +973,6 @@ function App() {
           </div>
         </div>
       </footer>
-      {/* <footer className="bg-gradient-to-r from-gray-900/30 to-violet-900/30 py-12 border-t border-violet-500/20 relative z-10">
-        <div className="container mx-auto px-6">
-          <div className="text-center">
-            <div className="relative mb-6 flex items-center justify-center gap-4">
-              <div className="w-20">
-                <img src="/madadz.png" alt="Madadz" />
-              </div>
-            </div>
-            <p className="text-gray-400 mb-6 text-lg">
-              Crafting extraordinary digital experiences.
-            </p>
-            <p className="text-gray-500">© 2025 MADADZ. All rights reserved.</p>
-          </div>
-        </div>
-      </footer> */}
 
       <Toaster />
     </div>
