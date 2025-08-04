@@ -327,12 +327,6 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-8 py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25 group overflow-hidden"
-                // onClick={() =>
-                //   window.open(
-                //     "https://calendly.com/madadzindia/30min",
-                //     "_blank"
-                //   )
-                // }
               >
                 <span className="relative z-10">Book Consultation</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -366,9 +360,6 @@ function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-6 py-3 rounded-2xl transition-all duration-300 text-center font-semibold"
-                  // onClick={() =>
-                  //   window.open("https://calendly.com/madadz", "_blank")
-                  // }
                 >
                   Book Consultation
                 </a>
@@ -393,7 +384,7 @@ function App() {
             experiences that break boundaries and deliver success.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+          {/* <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
             <button
               onClick={() => scrollToSection("projects")}
               className="group relative bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-12 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/30 overflow-hidden"
@@ -401,13 +392,6 @@ function App() {
               <span className="relative z-10">View Our Work</span>
               <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
-            {/* <button
-              onClick={() => scrollToSection("contact")}
-              className="group relative border-2 border-violet-500 hover:border-violet-400 hover:bg-violet-500/10 px-12 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm"
-            >
-              Get In Touch
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/5 to-violet-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-            </button> */}
             <a
               href="tel:+919566863602"
               className="group flex items-center gap-2 relative border-2 border-violet-500 hover:border-violet-400 hover:bg-violet-500/10 px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer"
@@ -415,6 +399,24 @@ function App() {
               <Phone className="w-5 h-5" />
               <span>+91 9566863602</span>
               <div className="absolute inset-0 bg-gradient-to-r from-violet-500/5 to-violet-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+            </a>
+          </div> */}
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="group relative border-2 border-violet-500 hover:border-violet-400 hover:bg-violet-500/10 px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer"
+            >
+              <span className="relative z-10 text-center">View Our Work</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/5 to-violet-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+            </button>
+            <a
+              href="tel:+919566863602"
+              className="group flex items-center gap-2 relative bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/30 overflow-hidden"
+            >
+              <Phone className="w-5 h-5 z-10" />
+              <span className="relative z-10">+91 9566863602</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
           </div>
 
@@ -547,7 +549,9 @@ function App() {
               Our Services
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience a full range of services built to accelerate your digital journey — with precision, creativity, and performance at the core.
+              Experience a full range of services built to accelerate your
+              digital journey — with precision, creativity, and performance at
+              the core.
             </p>
           </div>
           {/* Services Preview */}
