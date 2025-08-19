@@ -33,10 +33,6 @@ function App() {
     message: "",
   });
 
-  console.log(state);
-  console.log(state.errors);
-  console.log(formData);
-
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     const handleMouseMove = (e: MouseEvent) => {
