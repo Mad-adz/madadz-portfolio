@@ -280,7 +280,7 @@ function App() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/919566863602"
+        href={import.meta.env.VITE_MADADZ_WHATSAPP}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-50 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-2 md:p-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 group"
@@ -323,7 +323,7 @@ function App() {
                 </button>
               ))}
               <a
-                href="https://wa.me/919566863602"
+                href={import.meta.env.VITE_MADADZ_WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-8 py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25 group overflow-hidden"
@@ -356,7 +356,7 @@ function App() {
                   </button>
                 ))}
                 <a
-                  href="https://wa.me/919566863602"
+                  href={import.meta.env.VITE_MADADZ_WHATSAPP}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-6 py-3 rounded-2xl transition-all duration-300 text-center font-semibold"
@@ -384,24 +384,6 @@ function App() {
             experiences that break boundaries and deliver success.
           </p>
 
-          {/* <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="group relative bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-12 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/30 overflow-hidden"
-            >
-              <span className="relative z-10">View Our Work</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-            <a
-              href="tel:+919566863602"
-              className="group flex items-center gap-2 relative border-2 border-violet-500 hover:border-violet-400 hover:bg-violet-500/10 px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer"
-            >
-              <Phone className="w-5 h-5" />
-              <span>+91 9566863602</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/5 to-violet-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-            </a>
-          </div> */}
-
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
             <button
               onClick={() => scrollToSection("projects")}
@@ -411,11 +393,13 @@ function App() {
               <div className="absolute inset-0 bg-gradient-to-r from-violet-500/5 to-violet-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
             </button>
             <a
-              href="tel:+919566863602"
+              href={import.meta.env.VITE_MADADZ_CALL}
               className="group flex items-center gap-2 relative bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/30 overflow-hidden"
             >
               <Phone className="w-5 h-5 z-10" />
-              <span className="relative z-10">+91 9566863602</span>
+              <span className="relative z-10">
+                {import.meta.env.VITE_MADADZ_MOBILE}
+              </span>
               <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
           </div>
@@ -510,7 +494,7 @@ function App() {
                 <p className="text-gray-300 mb-6">{plan.description}</p>
 
                 <a
-                  href="https://wa.me/919566863602"
+                  href={import.meta.env.VITE_MADADZ_WHATSAPP}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-violet-600 hover:bg-violet-700 text-white text-center py-3 rounded-xl font-semibold transition-colors mb-6"
@@ -712,12 +696,12 @@ function App() {
                       <div>
                         <p className="text-gray-400 text-sm">Mobile</p>
                         <a
-                          href="https://wa.me/919566863602"
+                          href={import.meta.env.VITE_MADADZ_CALL}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-gray-300 hover:text-white transition-colors"
                         >
-                          +91 9566863602
+                          {import.meta.env.VITE_MADADZ_MOBILE}
                         </a>
                       </div>
                     </div>
@@ -890,8 +874,11 @@ function App() {
                 </div>
                 <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-300">
                   <Phone className="w-5 h-5" />
-                  <a href="tel:+919566863602" className="text-lg">
-                    +91 95668 63602
+                  <a
+                    href={import.meta.env.VITE_MADADZ_CALL}
+                    className="text-lg"
+                  >
+                    {import.meta.env.VITE_MADADZ_MOBILE}
                   </a>
                 </div>
               </div>
